@@ -1,0 +1,30 @@
+/* github-codeblock-highlight.css */
+/* Obsidian 默认主题：仅调整代码块内部语法高亮，不修改其他 UI */
+
+.theme-light .markdown-rendered pre code,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  --code-normal: #24292f;      /* 普通文本 */
+  --code-comment: #6e7781;     /* 注释 */
+  --code-function: #8250df;    /* 函数 / 类名 */
+  --code-important: #cf222e;   /* important / 强调 */
+  --code-keyword: #cf222e;     /* 关键字 */
+  --code-property: #0550ae;    /* 属性 / 常量 */
+  --code-punctuation: #57606a; /* 标点 */
+  --code-string: #0a3069;      /* 字符串 */
+  --code-tag: #116329;         /* 标签 */
+  --code-value: #953800;       /* 值 / 变量 */
+}
+
+.theme-dark .markdown-rendered pre code,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  --code-normal: #e6edf3;      /* 普通文本 */
+  --code-comment: #8b949e;     /* 注释 */
+  --code-function: #d2a8ff;    /* 函数 / 类名 */
+  --code-important: #ff7b72;   /* important / 强调 */
+  --code-keyword: #ff7b72;     /* 关键字 */
+  --code-property: #79c0ff;    /* 属性 / 常量 */
+  --code-punctuation: #c9d1d9; /* 标点 */
+  --code-string: #a5d6ff;      /* 字符串 */
+  --code-tag: #7ee787;         /* 标签 */
+  --code-value: #ffa657;       /* 值 / 变量 */
+}
