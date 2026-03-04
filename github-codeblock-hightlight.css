@@ -1,30 +1,83 @@
 /* github-codeblock-highlight.css */
-/* Obsidian 默认主题：仅调整代码块内部语法高亮，不修改其他 UI */
+/* Obsidian 默认主题：调整代码块内部语法高亮、背景及加粗字体 */
 
+/* ========== 语法高亮变量（保持不变） ========== */
 .theme-light .markdown-rendered pre code,
 .theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
-  --code-normal: #24292f;      /* 普通文本 */
-  --code-comment: #6e7781;     /* 注释 */
-  --code-function: #8250df;    /* 函数 / 类名 */
-  --code-important: #cf222e;   /* important / 强调 */
-  --code-keyword: #cf222e;     /* 关键字 */
-  --code-property: #0550ae;    /* 属性 / 常量 */
-  --code-punctuation: #57606a; /* 标点 */
-  --code-string: #0a3069;      /* 字符串 */
-  --code-tag: #116329;         /* 标签 */
-  --code-value: #953800;       /* 值 / 变量 */
+  --code-normal: #24292f;      /* 普通文本 - 深灰色 (接近黑色) */
+  --code-comment: #6e7781;     /* 注释 - 中灰色 */
+  --code-function: #8250df;    /* 函数 / 类名 - 紫色 */
+  --code-important: #cf222e;   /* important / 强调 - 红色 */
+  --code-keyword: #cf222e;     /* 关键字 - 红色 */
+  --code-property: #0550ae;    /* 属性 / 常量 - 深蓝色 */
+  --code-punctuation: #57606a; /* 标点 - 灰色 */
+  --code-string: #0a3069;      /* 字符串 - 深蓝色 */
+  --code-tag: #116329;         /* 标签 - 深绿色 */
+  --code-value: #953800;       /* 值 / 变量 - 橙棕色 */
 }
 
 .theme-dark .markdown-rendered pre code,
 .theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock {
-  --code-normal: #e6edf3;      /* 普通文本 */
-  --code-comment: #8b949e;     /* 注释 */
-  --code-function: #d2a8ff;    /* 函数 / 类名 */
-  --code-important: #ff7b72;   /* important / 强调 */
-  --code-keyword: #ff7b72;     /* 关键字 */
-  --code-property: #79c0ff;    /* 属性 / 常量 */
-  --code-punctuation: #c9d1d9; /* 标点 */
-  --code-string: #a5d6ff;      /* 字符串 */
-  --code-tag: #7ee787;         /* 标签 */
-  --code-value: #ffa657;       /* 值 / 变量 */
+  --code-normal: #e6edf3;      /* 普通文本 - 浅灰白 */
+  --code-comment: #8b949e;     /* 注释 - 中灰色 */
+  --code-function: #d2a8ff;    /* 函数 / 类名 - 浅紫色 */
+  --code-important: #ff7b72;   /* important / 强调 - 浅红色/珊瑚色 */
+  --code-keyword: #ff7b72;     /* 关键字 - 浅红色/珊瑚色 */
+  --code-property: #79c0ff;    /* 属性 / 常量 - 亮蓝色 */
+  --code-punctuation: #c9d1d9; /* 标点 - 浅灰色 */
+  --code-string: #a5d6ff;      /* 字符串 - 浅蓝色 */
+  --code-tag: #7ee787;         /* 标签 - 浅绿色 */
+  --code-value: #ffa657;       /* 值 / 变量 - 橙黄色 */
+}
+
+/* ========== 代码块背景（统一编辑与阅读模式） ========== */
+/* 亮色模式 */
+.theme-light .markdown-rendered pre,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  background-color: #f8f8f8;   /* 代码块整体背景 */
+}
+
+/* 暗色模式（使用你选择的 #252a33） */
+.theme-dark .markdown-rendered pre,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  background-color: #252a33;   /* 代码块整体背景 */
+}
+
+/* 确保代码块内的 <code> 背景透明，避免双重背景 */
+.theme-light .markdown-rendered pre code,
+.theme-dark .markdown-rendered pre code {
+  background-color: transparent;
+}
+
+/* ========== 行内代码背景（统一编辑与阅读模式） ========== */
+/* 亮色模式 - 阅读模式（排除代码块内的 code） */
+.theme-light .markdown-rendered *:not(pre) > code {
+  background-color: #f2f2f2;
+}
+/* 亮色模式 - 编辑模式 */
+.theme-light .markdown-source-view.mod-cm6 .cm-inline-code {
+  background-color: #f2f2f2;
+}
+
+/* 暗色模式 - 阅读模式（排除代码块内的 code） */
+.theme-dark .markdown-rendered *:not(pre) > code {
+  background-color: #2d333b;
+}
+/* 暗色模式 - 编辑模式 */
+.theme-dark .markdown-source-view.mod-cm6 .cm-inline-code {
+  background-color: #2d333b;
+}
+
+/* ========== 增强加粗字体显示（针对思源宋体） ========== */
+/* 提高权重以确保生效 */
+body.theme-light strong,
+body.theme-light b,
+body.theme-light .cm-strong {
+  font-weight: 1000;           /* 使用极重字重，可自行调整至 700~900 */
+}
+
+body.theme-dark strong,
+body.theme-dark b,
+body.theme-dark .cm-strong {
+  font-weight: 1000;
 }
